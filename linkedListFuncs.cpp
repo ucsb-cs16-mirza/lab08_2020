@@ -49,10 +49,7 @@ Node* findKthNode(Node *head, int k){
 * Delete n1, n2 and return &n3
 */
 Node* removeKFromFront(Node *head, int k){
-	Node* temp= new Node;
-	if(head == NULL){
-	       return NULL;
-	}
+	Node* temp;
 	if( k == 0){
 		return head;
 	}
