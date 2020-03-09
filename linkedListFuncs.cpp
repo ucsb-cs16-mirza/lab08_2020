@@ -29,11 +29,11 @@ Node* findKthNode(Node *head, int k){
 	}
 	return findKthNode( head->next, k-1);
 	*/
-
+	
 	if ( k <= 1){
 		temp = head;
 		head = head->next;
-		return temp;
+		return  temp;
 	}else{
 		return findKthNode ( head ->next, k-1);
 	}
@@ -48,14 +48,22 @@ Node* findKthNode(Node *head, int k){
 * Example: n1 -> n2 -> n3 -> n4, k = 2
 * Delete n1, n2 and return &n3
 */
-Node* removeKFromFront(Node *head, int k) {
+Node* removeKFromFront(Node *head, int k){
 	Node* temp= new Node;
-	/* if ( k <= 1){
-		temp = head->next;
-		delete head;
-	 return temp;*/
+	if(head == NULL){
+	       return NULL;
+	}
+	if( k == 0){
+		return head;
+	}
+   	temp = head;
+	head = head->next;
+	delete temp;
 
-	if ( head == NULL){
+	return findKthNode ( head->next, k-1);
+
+	
+	/*if ( head == NULL){
 		return NULL;
 		//when there linkedlist is empty, we should return nothing 
 	}
@@ -67,8 +75,7 @@ Node* removeKFromFront(Node *head, int k) {
 		return head;
 
 	}
-	return removeKFromFront(head, k-1);
-		 
+	return removeKFromFront(head, k-1);*/ 
     //STUB: edit with the correct output, according to the lab instructions, using recursion
 }
 
