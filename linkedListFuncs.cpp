@@ -86,7 +86,7 @@ Node* removeKFromFront(Node *head, int k){
  * Return &head of the linked list 5 -> 7 -> 9 -> 12
  */
 Node* sum(Node *head1, Node *head2) {
-	Node* temp = new Node;
+	Node* temp;
 	if( head1 == 0){
 		return head2;
 	}
@@ -116,7 +116,7 @@ Node* splice(Node *head1, Node *head2) {
 	if( head2 == 0){
 		return head1;
 	}
-	Node* temp = new Node;
+	Node* temp;
 	temp = head1;
 	head1 = temp->next;
 	temp->next = head2;
